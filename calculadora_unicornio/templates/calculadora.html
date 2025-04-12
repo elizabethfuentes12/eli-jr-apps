@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora Unicornio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='estilo.css') }}">
+</head>
+<body>
+    <div class="calculadora-container">
+        <h1>🦄 Calculadora Mágica de Unicornio 🦄</h1>
+        
+        <div class="calculadora">
+            <form method="POST">
+                <div class="numeros">
+                    <input type="number" name="numero1" placeholder="Primer número" required>
+                    <input type="number" name="numero2" placeholder="Segundo número" required>
+                </div>
+                
+                <div class="operaciones">
+                    <button type="submit" name="operacion" value="suma">➕</button>
+                    <button type="submit" name="operacion" value="resta">➖</button>
+                    <button type="submit" name="operacion" value="multiplicacion">✖️</button>
+                    <button type="submit" name="operacion" value="division">➗</button>
+                </div>
+                
+                <div class="resultado">
+                    <h2>Resultado:</h2>
+                    <div class="resultado-valor">{{ resultado }}</div>
+                </div>
+            </form>
+        </div>
+        
+        <div class="unicornios">
+            <img src="{{ url_for('static', filename='unicornio.png') }}" alt="Unicornio" class="unicornio-img">
+            <img src="{{ url_for('static', filename='arcoiris.png') }}" alt="Arcoiris" class="arcoiris-img">
+        </div>
+    </div>
+</body>
+</html>
